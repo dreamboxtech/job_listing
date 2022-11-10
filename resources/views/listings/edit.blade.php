@@ -6,7 +6,7 @@
         <h2 class="text-2xl font-bold uppercase mb-1">
             Create a Gig
         </h2>
-        <p class="mb-4">Post a gig to find a developer</p>
+        <p class="mb-4">Edit Gig</p>
     </header>
 
     {{-- <form action="/listings" method="POST" enctype="mulitpart/form-data"> --}}
