@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
+
+        $user = User::factory()->create([
+            'name' => 'Test Name',
+            'email' => 'test@example.com',
+        ]);
+
         // Listing::create([
         //     'title' => 'Laravel Senior Developer',
         //     'tags' => 'laravel, javascript',
@@ -37,6 +44,9 @@ class DatabaseSeeder extends Seeder
         //     | routes are loaded by the RouteServiceProvider within a group which
         //     | contains the "web" middleware group. Now create something great!'
         // ]);
-        Listing::factory(10)->create();
+        Listing::factory(10)->create([
+            'user_id' => $user->id,
+            'email' => $user->email,
+        ]);
     }
 }
